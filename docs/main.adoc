@@ -4,7 +4,7 @@
 :docinfo:
 :icons: font
 :toc: left
-:toclevels: 2
+:toclevels: 3
 :sectanchors:
 :imagesdir: images
 :title-logo-image: image:digitaliseringsdirektoratet.png[pdfwidth=30vw]
