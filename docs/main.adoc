@@ -1,3 +1,4 @@
+include::locale/attributes.adoc[]
 = Spesifikasjonsmal
 :description: Mal for bruk til nye spesifikasjoner som er laga i asciidoc.
 :doctype: book
@@ -14,8 +15,6 @@ image::digitaliseringsdirektoratet.png[width=50%, pdfwidth=30vw]
 Publisert: 2020-03-05
 
 WARNING: Dette er mal-dokument for andre spesifikasjoner.
-
-include::locale/attributes.adoc[]
 
 include::shared/download.adoc[]
 
