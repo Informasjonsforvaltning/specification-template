@@ -17,21 +17,11 @@ edit the content under `docs/` and the RDF artifacts under `ontology/`.
 
 Content is authored in Norwegian (Bokmål by default, `lang=nb`; Nynorsk supported, `lang=nn`).
 
-## Building locally
+## Editing and previewing
 
-Builds run through the `asciidoctor/docker-asciidoctor` image — no local toolchain required:
-
-```sh
-docker run -it -v $(pwd):/documents asciidoctor/docker-asciidoctor
-# inside the container:
-asciidoctor -a lang=nb -D docs -o index.html docs/main.adoc        # HTML
-asciidoctor-pdf -a lang=nb -D docs -o document.pdf docs/main.adoc   # PDF
-```
-
-Generated artifacts (`*.html`, `*.pdf`, `*.epub`) are git-ignored — never commit them. For a live
-preview, `pip install --user live-server && live-server docs`, then open <http://localhost:8888>.
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the full contributor guide.
+Edit the chapters under `docs/`; CI builds and publishes the document automatically (see below).
+**[CONTRIBUTING.md](CONTRIBUTING.md)** has the step-by-step guide for editing and previewing the
+document locally — including how to clone (the repo uses a git submodule for `docs/shared`).
 
 ## CI / publishing
 
