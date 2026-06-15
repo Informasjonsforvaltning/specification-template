@@ -1,0 +1,25 @@
+name: build adocs
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches:
+      - develop
+    paths:
+      - docs/**
+
+jobs:
+  build-adocs:
+    uses: Informasjonsforvaltning/workflows/.github/workflows/specification-github-pages.yaml@main
+    with:
+      program_html: |
+        asciidoctor -D docs -o index.html -a lang=nb docs/main.adoc
+      program_pdf: |
+        asciidoctor-pdf -D docs -o document.pdf -a lang=nb docs/main.adoc
+      program_pdf_continue_on_error: true
+      publish_branch: gh-pages
+      publish_dir: ./docs
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
