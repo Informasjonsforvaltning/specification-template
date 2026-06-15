@@ -14,9 +14,13 @@ For at det følgende skal virke på din maskin, må du ha programvare installert
 
 Alternativt i kommando-linje:
 ```
-% git clone https://github.com/Informasjonsforvaltning/specification-template.git
+% git clone --recurse-submodules https://github.com/Informasjonsforvaltning/specification-template.git
 % cd specification-template
 % atom .                                # dersom du har installert Atom
+```
+Mappen `docs/shared` er et git-submodul ([asciidoc-shared](https://github.com/Informasjonsforvaltning/asciidoc-shared)). Har du allerede klona uten `--recurse-submodules`, hent det med:
+```
+% git submodule update --init --recursive
 ```
 ### Gjøre endringer
 Denne standarden er laget i [AsciiDoc](http://asciidoc.org/) med hjelp av verktøyet [Asciidoctor](https://asciidoctor.org/).

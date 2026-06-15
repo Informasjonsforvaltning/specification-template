@@ -1,0 +1,24 @@
+name: build adocs and publish to production
+
+permissions:
+  contents: read
+
+on:
+  workflow_dispatch:
+
+jobs:
+  upload-files-to-production:
+    name: Upload specification to static-rdf-server
+    uses: Informasjonsforvaltning/workflows/.github/workflows/specification-upload-files.yaml@main
+    with:
+      program_html: |
+        asciidoctor -D docs -o index.html -a lang=nb docs/main.adoc
+      files: |
+        docs/index.html text/html nb
+        docs/images/digitaliseringsdirektoratet.png image/png nb images/digitaliseringsdirektoratet.png
+      host: https://data.norge.no
+      ontology: specification-template # TODO: confirm ontology slug for the real specification
+      ontology-type: specification
+      # version: v1 # TODO: set when publishing a versioned release
+    secrets:
+      STATIC_RDF_SERVER_API_KEY: ${{ secrets.STATIC_RDF_SERVER_API_KEY }}
