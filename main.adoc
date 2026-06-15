@@ -5,21 +5,30 @@ include::locale/attributes.adoc[]
 :docinfo:
 :icons: font
 :toc: left
-:toclevels: 3
+ifdef::backend-pdf[:toc: macro]
+:toc-title: Innholdsfortegnelse
+:toclevels: 4
 :sectanchors:
+:sectlinks:
+:table-stripes: even
+:xrefstyle: full
 :imagesdir: images
 :title-logo-image: image:digitaliseringsdirektoratet.png[pdfwidth=30vw]
 
 image::digitaliseringsdirektoratet.png[width=50%, pdfwidth=30vw]
 
-Publisert: 2020-03-05
-
 WARNING: Dette er mal-dokument for andre spesifikasjoner.
 
-include::shared/download.adoc[]
+// Erstatt metadata-blokken under for din spesifikasjon:
+*Lisens*: https://creativecommons.org/licenses/by/4.0/[CC BY 4.0 &#x29C9;, window="_blank", role="ext-link"] +
+*Status*: Utkast +
+*Versjon*: v0.1.0 +
+*Publisert*: 2020-03-05
+
+include::download.adoc[]
 
 // Innhold her. Feks ei fil pr kapittel:
 include::forord.adoc[]
 include::kapittel_1.adoc[]
 
-include::shared/stats.adoc[]
+include::shared/analytics.adoc[]
